@@ -1,0 +1,126 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verte Bien</title>
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">Verte Bien</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#services">Servicios</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">Sobre Nosotros</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#location">Dónde Estamos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#appointment">Sacar Turno</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="btn btn-warning" href="{% url 'login' %}">Login</a>
+                    </li>                    
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header class="py-5 position-relative">
+        <img src="{% static 'images/salon.jpg' %}" alt="Fondo del Header" class="header-background">
+        <div class="container text-center">
+            <h1 class="display-4 text-white">Bienvenido a Verte Bien</h1>
+            <p>La mejor experiencia para tu cabello en Formosa</p>
+        </div>
+    </header>
+
+    <section id="services" class="services py-5">
+        <div class="container">
+            <h2 class="text-center">Nuestros Servicios</h2>
+            <div class="row">
+                <div class="col-md-4">
+                    <h3>Corte de Cabello</h3>
+                    <p>Ofrecemos estilos modernos y clásicos de corte de cabello para hombres, mujeres y niños.</p>
+                </div>
+                <div class="col-md-4">
+                    <h3>Coloración</h3>
+                    <p>Explora nuestros servicios de coloración y transforma tu look con los colores de tendencia.</p>
+                </div>
+                <div class="col-md-4">
+                    <h3>Tratamientos</h3>
+                    <p>Tratamientos personalizados para mantener tu cabello saludable, brillante y fuerte.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="about py-5">
+        <div class="container">
+            <h2 class="text-center">Sobre Nosotros</h2>
+            <p>En "Verte Bien", nos dedicamos a ofrecerte los mejores servicios de peluquería en Formosa. Con un equipo profesional y experimentado, nos aseguramos de que cada visita sea una experiencia relajante y satisfactoria. Utilizamos productos de la más alta calidad y las últimas técnicas para brindarte el look que deseas.</p>
+        </div>
+    </section>
+
+    <section id="location" class="location py-5">
+        <div class="container">
+            <h2 class="text-center">Dónde Estamos</h2>
+            <p class="text-center">Visítanos en nuestra ubicación cómoda y accesible en Formosa:</p>
+            <address class="text-center mb-4">
+                <strong>Verte Bien Peluquería</strong><br>
+                O'Higgins 206,<br>
+                Formosa, Argentina<br>
+            </address>
+
+<div class="map-container">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3560.317908408543!2d-58.17858908495629!3d-26.185776983423676!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9459a3c1b0a6af2f%3A0x9de0b3be3a3991e2!2sO%27Higgins%20206%2C%20Formosa!5e0!3m2!1ses-419!2sar!4v1633899201238!5m2!1ses-419!2sar" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+</div>
+
+        </div>
+    </section>
+    
+
+    <section id="appointment" class="appointment py-5">
+        <div class="container">
+            <h2 class="text-center">Sacar Turno</h2>
+            <p>Reserva tu cita hoy y disfruta de nuestros excepcionales servicios de peluquería. Estamos aquí para hacerte lucir y sentirte increíble.</p>
+            
+            <form class="mt-4">
+                <!-- {% csrf_token %} -->
+                <div class="mb-3">
+                    <label for="nombre" class="form-label">Nombre</label>
+                    <input type="text" class="form-control" id="nombre" name="nombre" required>
+                </div>
+                <div class="mb-3">
+                    <label for="telefono" class="form-label">Teléfono</label>
+                    <input type="tel" class="form-control" id="telefono" name="telefono" required>
+                </div>
+                <div class="mb-3">
+                    <label for="fecha" class="form-label">Fecha</label>
+                    <input type="date" class="form-control" id="fecha" name="fecha" required>
+                </div>
+                <div class="text-center">
+                    <button type="submit" class="btn btn-primary">Reservar Ahora</button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <footer class="bg-dark text-white text-center py-3">
+        <p>&copy; 2023 Verte Bien. Todos los derechos reservados.</p>
+    </footer>
+
+    <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+</body>
+</html>
