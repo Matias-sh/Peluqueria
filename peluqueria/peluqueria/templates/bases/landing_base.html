@@ -37,7 +37,7 @@
             </div>
         </div>
     </nav>
-
+    {% block body %}
     <header class="py-5 position-relative">
         <img src="{% static 'images/salon.jpg' %}" alt="Fondo del Header" class="header-background">
         <div class="container text-center">
@@ -116,7 +116,7 @@
             </form>
         </div>
     </section>
-
+    {% endblock body %}
     <footer class="bg-dark text-white text-center py-3">
         <p>&copy; 2023 Verte Bien. Todos los derechos reservados.</p>
     </footer>

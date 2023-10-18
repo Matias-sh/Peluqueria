@@ -1,0 +1,6 @@
+{% extends '../bases/landing_base' %}7
+{% block body %}
+{% for cliente in clientes %}
+    <p>{{ cliente.nombre }} {{ cliente.apellido }}</p>
+{% endfor %}
+{% endblock body %}
